@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --box-shadow: -5px -5px 9px #ffffff73, 5px 5px 9px #5e68794d;
+  --inset-shadaw: inset -5px -5px 9px #ffffff73, inset 5px 5px 9px #5e68794d;
+  --bg-color: #ccc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "poppins", serif;
+  background-color: var(--bg-color);
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.container {
+  width: 100%;
+  position: fixed;
+}
+
+.nav-container {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 150px;
+  box-shadow: var(--box-shadow);
+  border-radius: 15px;
+  background-color: var(--bg-color);
+}
+
+.photo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.photo img:hover {
+  scale: 1.2;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-list li {
+  width: 100px;
+  font-weight: 500;
+  box-shadow: var(--inset-shadaw);
+  display: grid;
+  place-content: center;
+  padding: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.nav-list li:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.nav-logo span {
+  font-size: 25px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.nav-logo i {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1023px) {
+  .nav-container {
+    padding: 30px 100px;
+  }
+}
+
+@media only screen and (min-width: 991px) and (max-width: 1023px) {
+  .nav-container {
+    padding: 30px 60px;
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  .nav-container {
+    padding: 20px;
+  }
+
+  .nav-list {
+    display: grid;
+    gap: 20px;
+    position: absolute;
+    margin-top: 21rem;
+    background-color: var(--bg-color);
+    width: 200px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    transition: 0.3s ease-in-out;
+    display: none;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-logo i {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .nav-list.active {
+    display: grid;
+  }
+}
